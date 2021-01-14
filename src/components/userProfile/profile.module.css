@@ -1,0 +1,6 @@
+.content {
+    grid-area: c;
+  }
+  p{
+    margin: 0;
+  }

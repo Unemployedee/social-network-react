@@ -1,0 +1,29 @@
+.userInfo{
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: 1fr 6fr;
+    grid-column-gap: 20px;
+    grid-template-areas: 
+    "avatar usertext"
+    "avatar usertext";
+  }
+  
+  .userInfo__text{
+    grid-area: usertext;
+  }
+  
+
+  
+  .userInfo__avatar{
+    width: 100px;
+    height: 100px;
+    grid-area: avatar;
+  }
+  
+  .userInfo__textEl {
+    margin: 2px 0;
+  }
+  
+  .userInfo__name{
+    margin-bottom: 20px;
+  }

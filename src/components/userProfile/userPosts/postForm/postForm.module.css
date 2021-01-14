@@ -1,0 +1,15 @@
+.postsForm{
+    margin: 10px 0 45px;
+  }
+  .postsForm__input{
+    resize: none;
+    width: 100%;
+    
+  }
+
+  .postsForm__btn{
+    float: right;
+    background-color: rgb(154, 190, 231);
+    padding: 5px;
+    border-radius: 20px;
+  }

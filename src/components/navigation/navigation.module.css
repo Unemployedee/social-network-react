@@ -1,0 +1,22 @@
+.nav {
+    grid-area: n;
+  }
+  
+  .nav__el{
+    padding: 10px 15px;
+    border-bottom: solid 2px rgb(211, 217, 231);
+  }
+  
+.nav__el a{
+  text-decoration: none;
+  }
+
+
+  .nav__el a{
+    font-weight: 600;
+    color: black;
+  }
+
+  a.activeLink{
+    color: rgb(37, 14, 241);
+  }

@@ -1,0 +1,25 @@
+  
+  .postList__post{
+    width: 100%;
+    border-bottom: 1px solid rgb(0, 0, 0, 0.10);
+    padding: 15px;
+    display: grid;
+    grid-template-columns: 1fr 20fr 4fr;
+    grid-column-gap: 15px;
+    
+  }
+  .postList__postAvatar{
+    border-radius: 20px;
+  }
+
+  .likesCount{
+    text-align: center;
+    margin: auto;
+    padding: 8px;
+    border-radius: 10px;
+    background-color: #fff;
+  }
+  
+  .postText{
+    word-wrap:break-word;
+  }

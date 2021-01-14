@@ -1,0 +1,16 @@
+.dialogs{
+    padding: 10px 20px;
+    display: grid;
+    grid-template-columns: 4fr 1fr 10fr;
+    background-color: rgb(230, 233, 240);
+}
+
+.dialogsHeader{
+    margin: 0 5px;
+}
+
+.delimiter{
+    height: 95%;
+    width: 2px;
+    background-color: rgb(0, 0, 0, 0.45);
+}

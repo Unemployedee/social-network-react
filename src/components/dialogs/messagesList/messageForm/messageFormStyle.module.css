@@ -1,0 +1,14 @@
+.messageForm{
+    grid-column: 3;
+}
+
+.messageText {
+    width: 90%;
+}
+.messageSend{
+    margin: 10px;
+    display: block;
+    background-color: rgb(154, 190, 231);
+    padding: 5px;
+    border-radius: 20px;
+}
