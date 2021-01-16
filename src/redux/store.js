@@ -1,19 +1,6 @@
 import dialogsReduser from "./dialogsReducer";
 import profileReducer from "./profileReducer";
 
-const ADD_POST = 'ADD-POST';
-const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
-const SEND_MESSAGE = 'SEND-MESSAGE';
-const UPDATE_NEW_MESSAGE_TEXT = 'UPDATE-NEW-MESSAGE-TEXT';
-
-
-export const addPostCreator = () => ({type: ADD_POST})
-export const updateNewPostTextCreator = (text) => ({type: UPDATE_NEW_POST_TEXT, newText: text})
-
-export const sendMessageCreator = () => ({type: SEND_MESSAGE});
-export const updateNewMessageTextCreator = (text) => ({type: UPDATE_NEW_MESSAGE_TEXT, newText: text}) ;
-
-
 let store = {
   _state: {
     profilePage: {

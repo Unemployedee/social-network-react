@@ -1,6 +1,6 @@
 import postForm from "./postForm.module.css";
 import React from "react";
-import { addPostCreator, updateNewPostTextCreator } from "../../../../redux/state";
+import { addPostCreator, updateNewPostTextCreator } from "../../../../redux/profileReducer";
 
 function PostsForm(props) {
   let postTextArea = React.createRef();

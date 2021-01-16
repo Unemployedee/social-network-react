@@ -1,6 +1,6 @@
 import messageFormStyle from './messageFormStyle.module.css'
 import React from 'react';
-import { sendMessageCreator, updateNewMessageTextCreator } from '../../../../redux/state';
+import { sendMessageCreator, updateNewMessageTextCreator } from '../../../../redux/dialogsReducer';
 
 
 function MessageForm (props) {
@@ -24,9 +24,7 @@ function MessageForm (props) {
              />
             <button onClick = {sendMessage} className = {messageFormStyle.messageSend}>Отправить</button>
         </div>
-
     );
-    
 }
 
 export default MessageForm;
