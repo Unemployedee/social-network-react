@@ -1,14 +1,17 @@
-const addPostActionType = 'ADD-POST';
-const updateNewPostTextActionType = 'UPDATE-NEW-POST-TEXT';
-const sendMessageActionType = 'SEND-MESSAGE';
-const updateNewMessageTextActionType = 'UPDATE-NEW-MESSAGE-TEXT';
+import dialogsReduser from "./dialogsReducer";
+import profileReducer from "./profileReducer";
 
-export const addPostCreator = () => ({type: addPostActionType})
-export const updateNewPostTextCreator = (text) => ({type: updateNewPostTextActionType, newText: text})
+const ADD_POST = 'ADD-POST';
+const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
+const SEND_MESSAGE = 'SEND-MESSAGE';
+const UPDATE_NEW_MESSAGE_TEXT = 'UPDATE-NEW-MESSAGE-TEXT';
 
 
-export const sendMessageCreator = () => ({type: sendMessageActionType});
-export const updateNewMessageTextCreator = (text) => ({type: updateNewMessageTextActionType, newText: text}) ;
+export const addPostCreator = () => ({type: ADD_POST})
+export const updateNewPostTextCreator = (text) => ({type: UPDATE_NEW_POST_TEXT, newText: text})
+
+export const sendMessageCreator = () => ({type: SEND_MESSAGE});
+export const updateNewMessageTextCreator = (text) => ({type: UPDATE_NEW_MESSAGE_TEXT, newText: text}) ;
 
 
 let store = {
@@ -76,67 +79,12 @@ let store = {
     this.renderEntireTree = observer;
   },
 
-  // addPost() {
-  //   let newPost = {
-  //     text: this._state.profilePage.newPostText,
-  //     likesCount: 0,
-  //   };
-  //   this._state.profilePage.postsListData.push(newPost);
-  //   this.renderEntireTree(this._state);
-  //   this._state.profilePage.newPostText = "";
-  // },
-
-  // updateNewPostText(newText) {
-  //   this._state.profilePage.newPostText = newText;
-  //   this.renderEntireTree(this._state);
-  // },
-
-  // sendMessage() {
-  //   let message = {
-  //     userName: "АааАа", //////// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-  //     messageText: this._state.dialogsPage.newMessageText,
-  //   };
-  //   this._state.dialogsPage.dialogsMessagesData.push(message);
-  //   this.renderEntireTree(this._state);
-  //   this._state.dialogsPage.newMessageText = "";
-  // },
-
-  // updateNewMessageText(newText) {
-  //   this._state.dialogsPage.newMessageText = newText;
-  //   this.renderEntireTree(this._state);
-  // },
-
   dispatch(action) {
 
-    if (action.type === addPostActionType) {
-      let newPost = {
-        text: this._state.profilePage.newPostText,
-        likesCount: 0,
-      };
-      this._state.profilePage.postsListData.push(newPost);
-      this.renderEntireTree(this._state);
-      this._state.profilePage.newPostText = "";
-    }
+    this._state.profilePage = profileReducer(this._state.profilePage, action);
+    this._state.dialogsPage = dialogsReduser(this._state.dialogsPage, action);
 
-    else if (action.type === updateNewPostTextActionType) {
-      this._state.profilePage.newPostText = action.newText;
-      this.renderEntireTree(this._state);
-    }
-
-    else if (action.type === sendMessageActionType) {
-      let message = {
-        userName: "АааАа", //////// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-        messageText: this._state.dialogsPage.newMessageText,
-      };
-      this._state.dialogsPage.dialogsMessagesData.push(message);
-      this.renderEntireTree(this._state);
-      this._state.dialogsPage.newMessageText = "";
-    }
-
-    else if (action.type === updateNewMessageTextActionType) {
-      this._state.dialogsPage.newMessageText = action.newText;
-      this.renderEntireTree(this._state);
-    }
+    this.renderEntireTree(this._state);
 
   }
 
