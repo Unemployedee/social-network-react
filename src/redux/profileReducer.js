@@ -34,6 +34,7 @@ const profileReducer = (state = initialState, action) => {
               };
               state.postsListData.push(newPost);
               state.newPostText = "";
+              debugger;
               return state;
 
         case UPDATE_NEW_POST_TEXT:

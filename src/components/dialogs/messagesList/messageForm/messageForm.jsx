@@ -3,15 +3,17 @@ import React from 'react';
 import { sendMessageCreator, updateNewMessageTextCreator } from '../../../../redux/dialogsReducer';
 
 
-function MessageForm (props) {
+function MessageFormContainer (props) {
 
     let messageText = React.createRef();
 
     let sendMessage = () => {
-        props.dispatch(sendMessageCreator());
+        // props.dispatch(sendMessageCreator());
+        props.sendMessage();
     }
     let onChangeMessageText = () =>{
-        props.dispatch(updateNewMessageTextCreator(messageText.current.value));
+        // props.dispatch(updateNewMessageTextCreator(messageText.current.value));
+        props.updateNewMessageText(messageText.current.value);
     }
     return (
         <div className = {messageFormStyle.messageForm}>
@@ -27,4 +29,4 @@ function MessageForm (props) {
     );
 }
 
-export default MessageForm;
+export default MessageFormContainer;

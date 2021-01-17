@@ -1,5 +1,5 @@
 import DialogsMessage from "./dialogsMessage/dialogsMessage";
-import MessageForm from "./messageForm/messageForm";
+import MessageFormContainer from "./messageForm/messageFormContainer";
 import dialogsMessageStyle from "./messagesList.module.css"
 
 function  MessagesList(props) {
@@ -7,7 +7,7 @@ function  MessagesList(props) {
     return(
         <div className={dialogsMessageStyle.messages}>
             {DialogsMessageArr}
-            <MessageForm dispatch = {props.dispatch} newMessageText = {props.newMessageText}/>
+            <MessageFormContainer dispatch = {props.dispatch} newMessageText = {props.newMessageText}/>
         </div>
     )
 }

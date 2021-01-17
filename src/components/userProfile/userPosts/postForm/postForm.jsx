@@ -1,18 +1,18 @@
 import postForm from "./postForm.module.css";
 import React from "react";
-import { addPostCreator, updateNewPostTextCreator } from "../../../../redux/profileReducer";
 
 function PostsForm(props) {
   let postTextArea = React.createRef();
 
   let addPost = () => {
-    props.dispatch(addPostCreator());
-    debugger;
+    props.addPost();
+    // props.dispatch(addPostCreator());
   };
 
   let onPostChange = () => {
     let text = postTextArea.current.value
-    props.dispatch(updateNewPostTextCreator(text));
+    props.onPostChange(text);
+    // props.dispatch(updateNewPostTextCreator(text));
   };
 
 

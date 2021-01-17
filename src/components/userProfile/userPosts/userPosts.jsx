@@ -1,15 +1,14 @@
 // import { updateNewPostText } from '../../../redux/state';
-import PostForm from './postForm/postForm'
+import PostFormContainer from './postForm/postFormContainer'
 import PostsList from './PostsList/postsList'
 
 function UserPosts (props) {
-   
+   debugger;
     return (
         <div>
-        <PostForm dispatch = {props.dispatch} newPostText = {props.newPostText} updateNewPostText = {props.updateNewPostText}/>
-        <PostsList postsListData = {props.postsListData}/>
+        <PostFormContainer state = {props.state}  dispatch = {props.dispatch}/>
+        <PostsList postsListData = {props.state.profilePage.postsListData}/>
         </div>
     );
 }
-
 export default UserPosts;
